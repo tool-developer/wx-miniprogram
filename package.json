@@ -1,5 +1,6 @@
 {
   "name": "@tool-developer/wx-miniprogram",
+  "private": true,
   "version": "0.0.1",
   "description": "wx miniprogram utils packages",
   "main": "index.js",
