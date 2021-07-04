@@ -1,2 +1,2 @@
 # wx-miniprogram
-wx miniprogram utils package
+wx miniprogram utils packages

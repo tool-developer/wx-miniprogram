@@ -1,0 +1,27 @@
+{
+  "name": "@tool-developer/wx-miniprogram",
+  "version": "0.0.1",
+  "description": "wx miniprogram utils packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tool-developer/wx-miniprogram.git"
+  },
+  "keywords": [
+    "wx",
+    "wx miniprogram",
+    "wx utils"
+  ],
+  "author": "tool-developer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tool-developer/wx-miniprogram/issues"
+  },
+  "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
