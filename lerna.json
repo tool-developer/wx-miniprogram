@@ -7,8 +7,7 @@
     "publish": {
       "ignoreChanges": [],
       "allowBranch": [
-        "main",
-        "master"
+        "main"
       ]
     },
     "bootstrap": {
