@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-async",
-  "version": "0.0.1-canary.0",
+  "version": "0.0.1-canary.1",
   "description": "wx miniprogram async task support",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
     "async-es": "2.6.3"
   },
   "publishConfig": {
-    "access":"public"
+    "access": "public"
   }
 }
