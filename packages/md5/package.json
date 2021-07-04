@@ -1,0 +1,28 @@
+{
+  "name": "@tool-developer/wx-md5",
+  "version": "0.0.1",
+  "description": "wx miniprogram async task support",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tool-developer/wx-miniprogram.git"
+  },
+  "keywords": [
+    "wx",
+    "wx md5"
+  ],
+  "author": "@tool-developer",
+  "license": "MIT",
+  "miniprogram": "miniprogram_dist",
+  "bugs": {
+    "url": "https://github.com/tool-developer/wx-miniprogram/issues"
+  },
+  "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
+  "devDependencies": {
+    "blueimp-md5": "^2.18.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@tool-developer/wx-async",
+  "version": "0.0.1",
+  "description": "wx miniprogram async task support",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tool-developer/wx-miniprogram.git"
+  },
+  "keywords": [
+    "wx",
+    "wx async",
+    "wx task"
+  ],
+  "author": "@tool-developer",
+  "license": "MIT",
+  "miniprogram": "miniprogram_dist",
+  "bugs": {
+    "url": "https://github.com/tool-developer/wx-miniprogram/issues"
+  },
+  "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
+  "devDependencies": {
+    "async": "^3.2.0"
+  }
+}
