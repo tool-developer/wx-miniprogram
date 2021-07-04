@@ -2,7 +2,19 @@
 # yarn lockfile v1
 
 
-async@^3.2.0:
-  version "3.2.0"
-  resolved "https://r.cnpmjs.org/async/download/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
-  integrity sha1-s6JoXF67ZB094C0WEALGD8n4VyA=
+"-@^0.0.1":
+  version "0.0.1"
+  resolved "https://r.cnpmjs.org/-/download/--0.0.1.tgz#db6db7cd866142880dd03e5b8781d1b4fac0e5bd"
+  integrity sha1-2223zYZhQogN0D5bh4HRtPrA5b0=
+
+async-es@2.6.3:
+  version "2.6.3"
+  resolved "https://r.cnpmjs.org/async-es/download/async-es-2.6.3.tgz#a28f606fba1dfafa1483fba7f968c4f51ca68995"
+  integrity sha1-oo9gb7od+voUg/un+WjE9RymiZU=
+  dependencies:
+    lodash-es "^4.17.14"
+
+lodash-es@^4.17.14:
+  version "4.17.21"
+  resolved "https://r.cnpmjs.org/lodash-es/download/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha1-Q+YmxG5lkbd1C+srUBFzkMYJ4+4=

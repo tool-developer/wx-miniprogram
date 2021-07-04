@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
   "devDependencies": {
-    "async": "^3.2.0"
+    "async-es": "2.6.3"
+  },
+  "dependencies": {
+    "-": "^0.0.1"
   }
 }

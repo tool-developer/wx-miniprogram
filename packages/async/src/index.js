@@ -1,4 +1,4 @@
-import {auto as asyncAuto,parallel as asyncParallel,series as asyncSeries} from "async"
+import {auto as asyncAuto,parallel as asyncParallel,series as asyncSeries} from "async-es"
 
 // only export those methods
 export const auto = asyncAuto;
