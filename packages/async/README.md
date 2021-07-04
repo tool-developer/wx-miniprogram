@@ -1,10 +1,11 @@
 # @tool-developer/wx-async
 Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript.
 
-To see [async](https://github.com/caolan/async).
+To see [async-es@2.6.3](https://github.com/caolan/async).
 
-You can use async in wx miniprogram using @tool-developer/wx-async, only support three methods: auto, parallel,series, not all.
+You can use async in wx miniprogram by @tool-developer/wx-async, only support three methods: auto, parallel,series, not all.
 
+Why is it async-es@2.6.3? v3.* will  an error on iOS 9.
 
 ## Usage
 ```
@@ -57,11 +58,11 @@ async.auto({
 
 ```
 
-
 ## API
 only support those methods, not all.
-#### auto(tasks, [concurrency], [callback])
 
-#### parallel(tasks, [callback])
+### auto(tasks, [concurrency], [callback])
 
-#### series(tasks, [callback])
+### parallel(tasks, [callback])
+
+### series(tasks, [callback])
