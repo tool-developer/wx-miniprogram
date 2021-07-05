@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
-    "build": "rollup -c",
-    "prepublish": "npm run build"
+    "build": "npm run clean & rollup -c"
   },
   "repository": {
     "type": "git",
@@ -31,5 +30,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "755169f9fcb7a66b806aad8a3bd0488dd2efbaf1"
+  "gitHead": "91796edbe4295502fa05e8551eac4cfd4185047c"
 }
