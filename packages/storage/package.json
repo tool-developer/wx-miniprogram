@@ -31,5 +31,6 @@
   },
   "devDependencies": {
     "@tool-developer/wx-unit": "^0.0.1"
-  }
+  },
+  "gitHead": "755169f9fcb7a66b806aad8a3bd0488dd2efbaf1"
 }

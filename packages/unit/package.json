@@ -28,5 +28,6 @@
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "755169f9fcb7a66b806aad8a3bd0488dd2efbaf1"
 }
