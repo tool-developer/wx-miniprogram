@@ -1,11 +1,11 @@
 {
   "name": "@tool-developer/wx-async",
-  "version": "0.0.1-canary.1",
+  "version": "0.0.1-canary.2",
   "description": "wx miniprogram async task support",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "clean":"../../scripts/clean_package.sh",
+    "clean": "../../scripts/clean_package.sh",
     "build": "rollup -c"
   },
   "repository": {

@@ -1,11 +1,11 @@
 {
   "name": "@tool-developer/wx-storage",
-  "version": "0.0.1-canary.1",
+  "version": "0.0.1-canary.2",
   "description": "wx miniprogram storage",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "clean":"../../scripts/clean_package.sh",
+    "clean": "../../scripts/clean_package.sh",
     "build": "rollup -c"
   },
   "repository": {
@@ -29,6 +29,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@tool-developer/wx-unit":"^0.0.1-canary.1"
+    "@tool-developer/wx-unit": "^0.0.1-canary.2"
   }
 }
