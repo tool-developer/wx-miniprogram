@@ -1,13 +1,13 @@
 {
   "name": "@tool-developer/wx-utils",
-  "version": "0.0.1",
+  "version": "0.0.2-canary.0",
   "description": "wx miniprogram utils library",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
     "build": "rollup -c",
-    "prepublish":"npm run build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
