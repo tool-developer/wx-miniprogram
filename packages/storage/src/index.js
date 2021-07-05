@@ -1,12 +1,12 @@
 import Storage from './lib/index';
 //
-const wx = global.wx || wx || {};
+const w = global.wx || wx || {};
 //
 const storage = new Storage({
-  setItem:wx.setStorageSync,
-  getItem:wx.getStorageSync,
-  removeItem:wx.removeStorageSync,
-  clear:wx.clearStorageSync
+  setItem:w.setStorageSync,
+  getItem:w.getStorageSync,
+  removeItem:w.removeStorageSync,
+  clear:w.clearStorageSync
 });
 
 export default storage;
