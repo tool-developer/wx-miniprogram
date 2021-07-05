@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublish":"npm run build"
   },
   "repository": {
     "type": "git",
