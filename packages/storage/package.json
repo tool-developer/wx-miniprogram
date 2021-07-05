@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-storage",
-  "version": "0.0.1-canary.3",
+  "version": "0.0.1-canary.4",
   "description": "wx miniprogram storage",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@tool-developer/wx-unit": "^0.0.1-canary.3"
+    "@tool-developer/wx-unit": "^0.0.1-canary.4"
   }
 }
