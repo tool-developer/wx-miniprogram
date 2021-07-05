@@ -1,16 +1,19 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
+import multi from 'rollup-plugin-multi-input';
 
 
 export default {
-  input:'src/index.js',
+  input:['./src/*.js','!./src/*.test.js'],
   output:{
-    file:'miniprogram_dist/index.js',
+    // file:'miniprogram_dist/index.js',
+    dir:'miniprogram_dist',
     format:'esm',
-    //name:"async"
+    assetFileNames:'[name].js'
   },
   plugins:[
+    multi(),
     resolve({
       browser: true
     }),

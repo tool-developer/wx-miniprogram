@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@tool-developer utils test 1`] = `
+Object {
+  "deepMerge": [Function],
+  "forEach": [Function],
+  "isArray": [Function],
+  "isDate": [Function],
+  "isEmpty": [Function],
+  "isObject": [Function],
+  "merge": [Function],
+}
+`;

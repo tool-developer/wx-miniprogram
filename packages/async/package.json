@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "clean":"../../scripts/clean_package.sh",
     "build": "rollup -c"
   },
   "repository": {

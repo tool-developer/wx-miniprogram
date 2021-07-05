@@ -1,7 +1,7 @@
 {
-  "name": "@tool-developer/wx-md5",
+  "name": "@tool-developer/wx-storage",
   "version": "0.0.1-canary.1",
-  "description": "wx miniprogram async task support",
+  "description": "wx miniprogram storage",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -14,7 +14,9 @@
   },
   "keywords": [
     "wx",
-    "wx md5"
+    "storage",
+    "wx storage",
+    "wx-storage"
   ],
   "author": "@tool-developer",
   "license": "MIT",
@@ -23,10 +25,10 @@
     "url": "https://github.com/tool-developer/wx-miniprogram/issues"
   },
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
-  "devDependencies": {
-    "blueimp-md5": "^2.18.0"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@tool-developer/wx-unit":"^0.0.1-canary.1"
   }
 }

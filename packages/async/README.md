@@ -1,13 +1,13 @@
 # @tool-developer/wx-async
-Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript.
+Async是一个实用模块，它为异步JavaScript提供了直接、强大的函数处理流程。
 
-To see [async-es@2.6.3](https://github.com/caolan/async).
+可以参考[async-es@2.6.3](https://github.com/caolan/async)。
 
-You can use async in wx miniprogram by @tool-developer/wx-async, only support three methods: auto, parallel,series, not all.
+由于小程序体积限制，该模块并未提供async的全部方法，只对我提供了一下三个：auto, parallel,series。
 
-Why is it async-es@2.6.3? v3.* will  an error on iOS 9.
+之所以使用async-es@2.6.3，是因为v3.*在iOS 9上会脚本报错(非微信环境出现过，所以降级使用2.6.3的版本)。
 
-## Usage
+## 用法
 ```
 npm install --save @tool-developer/wx-async
 ```
@@ -58,8 +58,8 @@ async.auto({
 
 ```
 
-## API
-only support those methods, not all.
+## 接口
+只提供了一下几个方法。
 
 ### auto(tasks, [concurrency], [callback])
 

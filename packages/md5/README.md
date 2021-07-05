@@ -1,11 +1,11 @@
 # @tool-developer/wx-md5
-From [JavaScript-MD5@2.18.0,to see](https://github.com/blueimp/JavaScript-MD5).
+该模块处理过程来自[JavaScript-MD5@2.18.0,to see](https://github.com/blueimp/JavaScript-MD5)。
 
 
-You can use md5 in wx miniprogram by @tool-developer/wx-md5.
+通过该模块，可以在微信中使用md5编码，在一些请求数据编码过程中会用到。
 
 
-## Usage
+## 用法
 ```
 npm install --save @tool-developer/wx-md5
 ```
@@ -22,6 +22,6 @@ console.log(hash);// 2063c1608d6e0baf80249c42e2be5804
 
 ```
 
-## API
+## 接口
 
 ### md5(string, key, raw)

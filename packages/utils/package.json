@@ -1,7 +1,7 @@
 {
-  "name": "@tool-developer/wx-md5",
+  "name": "@tool-developer/wx-utils",
   "version": "0.0.1-canary.1",
-  "description": "wx miniprogram async task support",
+  "description": "wx miniprogram utils library",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -14,7 +14,9 @@
   },
   "keywords": [
     "wx",
-    "wx md5"
+    "utils",
+    "wx utils",
+    "wx-utils"
   ],
   "author": "@tool-developer",
   "license": "MIT",
@@ -23,9 +25,6 @@
     "url": "https://github.com/tool-developer/wx-miniprogram/issues"
   },
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
-  "devDependencies": {
-    "blueimp-md5": "^2.18.0"
-  },
   "publishConfig": {
     "access": "public"
   }

@@ -58,7 +58,9 @@ module.exports = {
   // globalTeardown: null,
 
   // A set of global variables that need to be available in all test environments
-  globals: {},
+  globals: {
+    // Date
+  },
 
   // An array of directory names to be searched recursively up from the requiring module's location
   // moduleDirectories: [
@@ -185,4 +187,20 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  "verbose":true,
+  //"testEnvironment": "node",
+  //测试前先启动环境依赖文件
+  "setupFiles":['./test.js'],
+  //需要编译node_modules下的模块
+  "transformIgnorePatterns": [],
+  //单测覆盖
+  "coverageDirectory": "coverage",
+  //单测覆盖忽略文件
+  "coveragePathIgnorePatterns": [
+    "./test.js"
+  ],
+  //测试路径忽略文件
+  "testPathIgnorePatterns": [
+    "./test.js"
+  ],
 };
