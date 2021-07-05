@@ -5,7 +5,13 @@
   "version": "0.0.1",
   "command": {
     "publish": {
-      "ignoreChanges": [],
+      "ignoreChanges": [
+        ".gitignore",
+        "*.log",
+        "*.md"
+      ],
+      "message": "chore(release): publish",
+      "registry": "https://npm.pkg.github.com",
       "allowBranch": [
         "main"
       ]
