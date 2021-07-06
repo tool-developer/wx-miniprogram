@@ -9,7 +9,7 @@
     "test": "jest",
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "publish-canary": "lerna version prerelease --preid canary --force-publish & lerna publish --preid canary",
+    "publish-canary": "lerna version prerelease --preid canary --force-publish & lerna publish --canary --preid canary",
     "publish-stable": "lerna version --force-publish & lerna publish"
   },
   "repository": {
