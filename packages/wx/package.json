@@ -1,11 +1,11 @@
 {
   "name": "@tool-developer/wx-app",
-  "version": "0.0.1",
+  "version": "0.0.2-canary.0",
   "description": "wx miniprogram app",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "clean":"../../scripts/clean_package.sh",
+    "clean": "../../scripts/clean_package.sh",
     "build": "rollup -c"
   },
   "repository": {
