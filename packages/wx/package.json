@@ -1,0 +1,30 @@
+{
+  "name": "@tool-developer/wx-app",
+  "version": "0.0.1",
+  "description": "wx miniprogram app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "clean":"../../scripts/clean_package.sh",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tool-developer/wx-miniprogram.git"
+  },
+  "keywords": [
+    "wx",
+    "wx app",
+    "wx-app"
+  ],
+  "author": "@tool-developer",
+  "license": "MIT",
+  "miniprogram": "miniprogram_dist",
+  "bugs": {
+    "url": "https://github.com/tool-developer/wx-miniprogram/issues"
+  },
+  "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

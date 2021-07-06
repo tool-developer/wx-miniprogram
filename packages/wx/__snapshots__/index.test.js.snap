@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wx app test 1`] = `
+Object {
+  "SET_DATA_FREQUENCY": 100,
+  "__SET_DATA_CACHE": Object {},
+  "__SET_DATA_FREQUENCY_TIMESTAMP": 1625559145942,
+  "data": Object {},
+  "events": Object {},
+  "extend": [Function],
+  "version": "1.0.0",
+}
+`;
