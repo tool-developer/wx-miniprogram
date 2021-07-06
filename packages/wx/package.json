@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-app",
-  "version": "0.0.2-canary.1",
+  "version": "0.0.2",
   "description": "wx miniprogram app",
   "main": "index.js",
   "scripts": {

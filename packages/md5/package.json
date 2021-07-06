@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-md5",
-  "version": "0.0.2-canary.1",
+  "version": "0.0.2",
   "description": "wx miniprogram async task support",
   "main": "index.js",
   "scripts": {
