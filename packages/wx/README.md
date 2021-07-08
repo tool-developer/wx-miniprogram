@@ -73,7 +73,32 @@ i18n:{
 }
 ```
 
-### 页面跳转-pageTo(url,type,cb)
+### TabBarList
+当钱tabBar list配置pagePath数组，
+
+this.go处理流程中会自动识别跳转path是否在该配置中，采取不一致的处理。
+```
+wxapp.TabBarList = [
+  'pages/index/index',
+  'pages/mine/index'
+];
+```
+### PageNamePathKV
+页面名字路径映射，方便直接通过name对应路径。
+```
+wxapp.PageNamePathKV = {
+  'webview':'pages/webview/index'
+}
+```
+配置之后，可以直接通过name调用。
+```
+this.go('webview')
+```
+
+
+
+### 页面跳转
+#### pageTo(url,type,cb)
 针对'navigateTo', 'switchTab', 'redirectTo', 'reLaunch'方法，提供一致的处理。
 
 除了pageTo方法，switchTab提供同名switchTo，reLaunch提供同名reLaunchTo方法。
@@ -84,6 +109,23 @@ i18n:{
 | switch | 对应switchTab | 
 | redirect | 对应redirectTo | 
 | reLaunch | 对应reLaunch | 
+
+#### go(page,query,type,cb)
+页面跳转流程处理
+
+内部处理了path跳转的方式(type+tabBar list)
+
+内部还处理了query参数传递过程中的编码，以及路径转换
+
+内部还支持webview跳转处理，直接传递http打头的path，会进入webview，默认webview路径是:pages/webview/index，如果有调整，可在PageNamePathKV中配置。
+
+具体可参考[TabBarList](#TabBarList)和[PageNamePathKV](#PageNamePathKV)。
+
+
+
+#### back(delta)
+返回，调用[wx.navigateBack](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateBack.html)。
+
 
 ### 多语言处理
 #### i18nHandle(str,data)
