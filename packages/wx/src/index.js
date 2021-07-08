@@ -46,6 +46,12 @@ let wxapp = {
   version: '1.0.0',
   events: {},
   data: {},
+  // 导航列表配置
+  TabBarList:[],//
+  // 页面名字路径KV映射 
+  PageNamePathKV:{
+    'webview':'pages/webview/index'
+  },
   extend:function(...args){
     // 第一项置空
     args = [{}].concat(args);
@@ -108,8 +114,81 @@ function handlePageTo() {
   //
   return obj;
 }
+
 //
-assign(wxapp, handlePageTo())
+function obj2url(obj) {
+  if (!obj) return "";
+  const res = [];
+  //
+  for (let i in obj) {
+    //
+    if (obj[i] !== undefined && obj[i] !== null) {
+      //
+      res.push(i + "=" + encodeURIComponent(obj[i]));
+    }
+  }
+  //
+  return res.join("&");
+}
+
+//
+function pageTo(path, query, type, cb) {
+  //
+  path = path.replace(/^\//, "");
+  //
+  if (path.indexOf("?") > -1) {
+    //
+    query = query ? "&" + obj2url(query) : "";
+  } else {
+    //
+    query = query ? "?" + obj2url(query) : "";
+  }
+  //
+  if (type === "reLaunch" || type === true) {
+    //
+    return wxapp.reLaunchTo(["/", path, query].join(""), cb);
+  }
+  //如果是tab，进入指定页
+  if (wxapp.TabBarList.indexOf(path) > -1) {
+    //tab需要使用switchTab，且不能传递参数
+    return wxapp.switchTab(["/", path].join(""));
+  }
+  //
+  const currentPage = wxapp.getWxCurrentPage();
+  if (currentPage === path) {
+    //
+    return console.log("current page is path", currentPage);
+  }
+  //
+  return wxapp.pageTo(["/", path, query].join(""), type, cb);
+}
+//
+assign(wxapp, handlePageTo(),{
+  //
+  go(page,query,type,cb){
+    if(!page){
+      //
+      return console.log('no page path')
+    }
+    const path = wxapp.PageNamePathKV[page] || page;
+    // 进入网页
+    if(/^http/.test(path)){
+      query = query || {};
+      query.to = path;
+      //
+      return this.go("webview",query,type,cb);
+    }
+    //
+    return pageTo(path,query,type,cb);
+  },
+  // 返回
+  back(delta = -1){
+    wx.navigateBack({
+      delta,
+    });
+
+  }
+})
 
 /**
  * 多语言处理

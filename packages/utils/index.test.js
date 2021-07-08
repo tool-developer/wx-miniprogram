@@ -90,19 +90,19 @@ test('@tool-developer utils test', () => {
     method: 'get',
     requestType: 'json',
     responseType: 'json',
-    baseURL: 'http://10.0.1.91:9000',
+    baseURL: 'http://192.168.1.91:9000',
     maxCache: 100,
     credentials: 'include',
     mode: 'cors',
   };
   let deepArrayObjectTwo = {
-    action: '/product/manage/edit-base-info',
+    action: '/a/b/c',
     data: {
       projectId: 1,
       freight: 20,
       groupIds: [],
       imageUrls: [
-        '//test-mallcenter.oss-cn-hangzhou.aliyuncs.com/product/image/201911/7602f0fbd28646248536a142b1e130db.jpg',
+        '//a/b/c',
       ],
       productDesc: '',
       productLabel: '',
