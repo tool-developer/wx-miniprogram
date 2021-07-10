@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-app",
-  "version": "0.0.3-canary.0",
+  "version": "0.0.3-canary.1",
   "description": "wx miniprogram app",
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,6 @@
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "422218e28b95358589f5c30732aeb4b6257aaba9"
 }

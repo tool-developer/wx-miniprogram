@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-md5",
-  "version": "0.0.3-canary.0",
+  "version": "0.0.3-canary.1",
   "description": "wx miniprogram async task support",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "91796edbe4295502fa05e8551eac4cfd4185047c"
+  "gitHead": "422218e28b95358589f5c30732aeb4b6257aaba9"
 }
