@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-unit",
-  "version": "0.0.3",
+  "version": "0.0.4-canary.0",
   "description": "wx miniprogram unit test",
   "main": "index.js",
   "scripts": {
