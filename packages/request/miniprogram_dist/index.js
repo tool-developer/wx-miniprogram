@@ -29,11 +29,12 @@ function Adapter(config) {
         //服务端真实数据
         res,
         //微信响应
-        status: data.status,
+        ok: res.statusCode === 200,
+        status: data.status || data.code,
         // 服务端响应状态
-        statusCode: res.statusCode,
-        // 微信端响应status code
-        req: config
+        statusCode: res.statusCode // 微信端响应status code
+        //req:config
+
       });
     }; //
 
