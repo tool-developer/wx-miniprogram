@@ -21,7 +21,7 @@
     "wx miniprogram",
     "wx utils"
   ],
-  "author": "tool-developer",
+  "author": "@tool-developer",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tool-developer/wx-miniprogram/issues"
