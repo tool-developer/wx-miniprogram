@@ -5,7 +5,7 @@ import multi from 'rollup-plugin-multi-input';
 
 
 export default {
-  input:['./src/*.js','!./src/*.test.js'],
+  input:['./src/**/*.js','!./src/*.test.js'],
   output:{
     // file:'miniprogram_dist/index.js',
     dir:'miniprogram_dist',

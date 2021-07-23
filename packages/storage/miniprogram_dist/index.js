@@ -1,4 +1,4 @@
-import { S as Storage } from './index-73aeb906.js';
+import { S as Storage } from './index-c5940c13.js';
 
 const w = global.wx || wx || {}; //
 

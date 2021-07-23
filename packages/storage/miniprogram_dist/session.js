@@ -1,4 +1,4 @@
-import { S as Storage } from './index-73aeb906.js';
+import { S as Storage } from './index-c5940c13.js';
 
 //
 function SessionStorage() {} // 数据缓存
@@ -34,8 +34,8 @@ function getSessionStore() {
   }
 }
 
-var se = getSessionStore();
+var session = getSessionStore();
 
-const storage = new Storage(se);
+const storage = new Storage(session);
 
 export default storage;

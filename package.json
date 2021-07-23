@@ -10,7 +10,11 @@
     "clean": "lerna run clean",
     "build": "lerna run build",
     "publish-canary": "lerna publish prerelease --preid canary --force-publish",
-    "publish-stable": "lerna publish --force-publish"
+    "publish-stable": "lerna publish --force-publish",
+    "i": "lerna run i",
+    "l": "lerna run l",
+    "nl": "lerna run nl",
+    "pl": "lerna run pl"
   },
   "repository": {
     "type": "git",

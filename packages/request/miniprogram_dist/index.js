@@ -1,70 +1,6 @@
-function Adapter(config) {
-  return new Promise(function (resolve, reject) {
-    const data = config.data;
-    const headers = config.headers || {};
-    const url = config.url;
-    let method = config.method || 'get'; //
-
-    method = method.toUpperCase(); // console.log('--wx adapter config--',config);
-
-    const success = function (res) {
-      //开启微信Audits检测时需要assign处理
-      //let res = Object.assign({},res);
-      let data = res.data; //
-
-      if (typeof data === 'string') {
-        try {
-          data = JSON.parse(data);
-        } catch (e) {
-          /* Ignore */
-        }
-      } //
-
-
-      res.data = data;
-      data = data || {}; //
-
-      resolve({
-        data,
-        //服务端真实数据
-        res,
-        //微信响应
-        ok: res.statusCode === 200,
-        status: data.status || data.code,
-        // 服务端响应状态
-        statusCode: res.statusCode // 微信端响应status code
-        //req:config
-
-      });
-    }; //
-
-
-    const fail = function (err) {
-      //
-      reject({
-        res: {
-          err
-        },
-        err
-      });
-    }; //
-
-
-    const task = wx.request({
-      // ...config,
-      url: url,
-      header: headers,
-      data: data,
-      method: method,
-      success: success,
-      fail: fail
-    });
-    return task;
-  });
-}
+import { A as Adapter } from './defaultAdapter-b96d75c4.js';
 
 var defaults = {
-  adapter: Adapter,
   timeout: 3000,
   headers: {
     Accept: 'application/json'
@@ -84,24 +20,212 @@ var defaults = {
 
 };
 
-function getAugmentedNamespace(n) {
-	if (n.__esModule) return n;
-	var a = Object.defineProperty({}, '__esModule', {value: true});
-	Object.keys(n).forEach(function (k) {
-		var d = Object.getOwnPropertyDescriptor(n, k);
-		Object.defineProperty(a, k, d.get ? d : {
-			enumerable: true,
-			get: function () {
-				return n[k];
-			}
-		});
-	});
-	return a;
+function _typeof$1(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof$1 = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof$1 = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof$1(obj);
 }
 
-const {
-  toString
-} = Object.prototype;
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof$1(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _isNativeFunction(fn) {
+  return Function.toString.call(fn).indexOf("[native code]") !== -1;
+}
+
+function _isNativeReflectConstruct$2() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function _construct(Parent, args, Class) {
+  if (_isNativeReflectConstruct$2()) {
+    _construct = Reflect.construct;
+  } else {
+    _construct = function _construct(Parent, args, Class) {
+      var a = [null];
+      a.push.apply(a, args);
+      var Constructor = Function.bind.apply(Parent, a);
+      var instance = new Constructor();
+      if (Class) _setPrototypeOf(instance, Class.prototype);
+      return instance;
+    };
+  }
+
+  return _construct.apply(null, arguments);
+}
+
+function _wrapNativeSuper(Class) {
+  var _cache = typeof Map === "function" ? new Map() : undefined;
+
+  _wrapNativeSuper = function _wrapNativeSuper(Class) {
+    if (Class === null || !_isNativeFunction(Class)) return Class;
+
+    if (typeof Class !== "function") {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    if (typeof _cache !== "undefined") {
+      if (_cache.has(Class)) return _cache.get(Class);
+
+      _cache.set(Class, Wrapper);
+    }
+
+    function Wrapper() {
+      return _construct(Class, arguments, _getPrototypeOf(this).constructor);
+    }
+
+    Wrapper.prototype = Object.create(Class.prototype, {
+      constructor: {
+        value: Wrapper,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    return _setPrototypeOf(Wrapper, Class);
+  };
+
+  return _wrapNativeSuper(Class);
+}
+
+function _createSuper$1(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct$1();
+
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
+function _isNativeReflectConstruct$1() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+var RequestError = /*#__PURE__*/function (_Error) {
+  _inherits(RequestError, _Error);
+
+  var _super = _createSuper$1(RequestError);
+
+  function RequestError(text, request) {
+    var _this;
+
+    _classCallCheck(this, RequestError);
+
+    _this = _super.call(this, text);
+    _this.ok = false;
+    _this.name = 'RequestError';
+    _this.request = request;
+    return _this;
+  }
+
+  return RequestError;
+}( /*#__PURE__*/_wrapNativeSuper(Error));
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+var toString = Object.prototype.toString;
 
 function isArray(val) {
   //
@@ -120,7 +244,7 @@ function isEmpty(obj) {
   } //
 
 
-  const keys = Object.keys(obj);
+  var keys = Object.keys(obj);
 
   if (keys.length) {
     return false;
@@ -130,7 +254,7 @@ function isEmpty(obj) {
 }
 
 function isObject$1(val) {
-  return val !== null && typeof val === 'object';
+  return val !== null && _typeof(val) === 'object';
 }
 
 function isDate(val) {
@@ -153,16 +277,16 @@ function forEach(obj, fn) {
 
   if (isArray(obj)) {
     // Iterate over array values
-    for (let i = 0, l = obj.length; i < l; i += 1) {
+    for (var i = 0, l = obj.length; i < l; i += 1) {
       //
       fn.call(null, obj[i], i, obj);
     }
   } else {
     // Iterate over object keys
-    const keys = Object.keys(obj);
+    var keys = Object.keys(obj);
 
-    for (let i = 0; i < keys.length; i += 1) {
-      const key = keys[i]; //
+    for (var _i = 0; _i < keys.length; _i += 1) {
+      var key = keys[_i]; //
 
       if (Object.prototype.hasOwnProperty.call(obj, key)) {
         //
@@ -172,9 +296,9 @@ function forEach(obj, fn) {
   }
 }
 
-function merge(...args) {
+function merge() {
   //
-  const result = {}; //
+  var result = {}; //
 
   function assignValue(val, key) {
     if (isObject$1(result[key]) && isObject$1(val)) {
@@ -186,18 +310,18 @@ function merge(...args) {
     }
   }
 
-  for (let i = 0, l = args.length; i < l; i += 1) {
+  for (var i = 0, l = arguments.length; i < l; i += 1) {
     //
-    forEach(args[i], assignValue);
+    forEach(i < 0 || arguments.length <= i ? undefined : arguments[i], assignValue);
   } //
 
 
   return result;
 }
 
-function deepMerge$1(...args) {
+function deepMerge$1() {
   //
-  const result = isArray(args[0]) ? [] : {}; //
+  var result = isArray(arguments.length <= 0 ? undefined : arguments[0]) ? [] : {}; //
 
   function assignValue(val, key) {
     //
@@ -220,9 +344,9 @@ function deepMerge$1(...args) {
   } //
 
 
-  for (let i = 0, l = args.length; i < l; i += 1) {
+  for (var i = 0, l = arguments.length; i < l; i += 1) {
     //
-    forEach(args[i], assignValue);
+    forEach(i < 0 || arguments.length <= i ? undefined : arguments[i], assignValue);
   } //
 
 
@@ -230,44 +354,18 @@ function deepMerge$1(...args) {
 }
 
 var index = {
-  forEach,
-  merge,
-  deepMerge: deepMerge$1,
-  isArray,
-  isObject: isObject$1,
-  isDate,
-  isEmpty
-};
-
-var miniprogram_dist = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  'default': index,
-  deepMerge: deepMerge$1,
   forEach: forEach,
+  merge: merge,
+  deepMerge: deepMerge$1,
   isArray: isArray,
-  isDate: isDate,
-  isEmpty: isEmpty,
   isObject: isObject$1,
-  merge: merge
-});
-
-var require$$0 = /*@__PURE__*/getAugmentedNamespace(miniprogram_dist);
-
-var utils$1 = require$$0;
-
-class RequestError extends Error {
-  constructor(text, request) {
-    super(text);
-    this.ok = false;
-    this.name = 'RequestError';
-    this.request = request;
-  }
-
-}
+  isDate: isDate,
+  isEmpty: isEmpty
+};
 
 function extend(a, b, thisArg) {
   //
-  utils$1.forEach(b, (val, key) => {
+  index.forEach(b, function (val, key) {
     if (thisArg && typeof val === 'function') {
       //
       a[key] = val.bind(thisArg);
@@ -282,30 +380,31 @@ function extend(a, b, thisArg) {
 
 
 function timeout2Throw(ms, request) {
-  return new Promise((_, reject) => {
-    const t = setTimeout(() => {
-      reject(new RequestError(`timeout of ${ms}ms exceeded`, request));
+  return new Promise(function (_, reject) {
+    var t = setTimeout(function () {
+      reject(new RequestError("timeout of ".concat(ms, "ms exceeded"), request));
       clearTimeout(t);
     }, ms);
   });
 } //
 
-function cancel2Throw({
-  cancelToken
-}) {
-  return new Promise((_, reject) => {
+
+function cancel2Throw(_ref) {
+  var cancelToken = _ref.cancelToken;
+  return new Promise(function (_, reject) {
     //
     if (cancelToken) {
       //
-      cancelToken.promise.then(cancel => {
+      cancelToken.promise.then(function (cancel) {
         //
         reject(cancel);
       });
     }
   });
 }
-var utils = Object.assign(utils$1, {
-  extend
+
+var utils = Object.assign(index, {
+  extend: extend
 });
 
 function IterceptorManager() {
@@ -316,8 +415,8 @@ function IterceptorManager() {
 
 IterceptorManager.prototype.use = function use(fulfilled, rejected) {
   this.handlers.push({
-    fulfilled,
-    rejected
+    fulfilled: fulfilled,
+    rejected: rejected
   });
   return this.handlers.length - 1;
 }; //
@@ -331,12 +430,186 @@ IterceptorManager.prototype.eject = function eject(id) {
 
 IterceptorManager.prototype.forEach = function forEach(fn) {
   //
-  utils.forEach(this.handlers, h => {
+  utils.forEach(this.handlers, function (h) {
     if (h !== null) {
       fn(h);
     }
   });
 };
+
+function buildURL(url, options) {
+  var _ref = options || {},
+      params = _ref.params,
+      dataArrayFormat = _ref.dataArrayFormat,
+      dataSerializer = _ref.dataSerializer,
+      dataRequestEncode = _ref.dataRequestEncode;
+
+  if (!params) {
+    return url;
+  } // URL RFC3986
+  // https://tools.ietf.org/html/rfc3986#section-2.2
+  // https://github.com/DavidTPate/rfc-3986#readme
+  // https://www.cnblogs.com/zhao1949/p/9871042.html
+  // 允许包含字符：(A-Za-z0-9-_.!~*'():/?#[]@$&'+,;=`)
+  // encodeURIComponent不会编码处理字符:A-Za-z0-9-_.!~*'()
+  // => :/?#[]@$&'+,;=`
+  // => ;/?:@&=+$,
+  // => #[]
+
+
+  function encode(val) {
+    //
+    if (!dataRequestEncode) {
+      //
+      return val;
+    } //
+
+
+    if (dataRequestEncode === 'encodeURIComponent') {
+      //
+      return encodeURIComponent(val);
+    }
+
+    if (typeof dataRequestEncode === 'function') {
+      //
+      return dataRequestEncode(val);
+    } //
+
+
+    if (utils.isArray(val)) {
+      //
+      return val;
+    } //
+
+
+    return encodeURIComponent(val) // .replace(/%40/gi, '@')
+    .replace(/%3A/gi, ':').replace(/%24/g, '$').replace(/%2C/gi, ',').replace(/%20/g, '+').replace(/%5B/gi, '[').replace(/%5D/gi, ']');
+  }
+
+  var serializedParams = null;
+
+  if (dataSerializer) {
+    //
+    serializedParams = dataSerializer(params);
+  } else {
+    //
+    var parts = []; //
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        //
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        if (dataArrayFormat === 2) {
+          key += '[]'; // key[]=1&key[]=2&key[]=3
+        } else {
+          key += ''; // key=1&key=2&key=3
+        }
+      } else {
+        val = [val];
+      }
+
+      var arr3 = [];
+      utils.forEach(val, function parseValue(v) {
+        //
+        if (utils.isDate(v)) {
+          //
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          //
+          v = JSON.stringify(v);
+        }
+
+        if (dataArrayFormat === 3) {
+          //
+          arr3.push(encode(v));
+        } else {
+          //
+          parts.push("".concat(encode(key), "=").concat(encode(v)));
+        }
+      }); // key=1,2,3
+
+      if (dataArrayFormat === 3 && arr3.length > 0) {
+        //
+        parts.push("".concat(encode(key), "=").concat(arr3.join(',')));
+      }
+    }); //
+
+    serializedParams = parts.join('&');
+  } //
+
+
+  if (serializedParams) {
+    //
+    var hashmarkIndex = url.indexOf('#'); //
+
+    if (hashmarkIndex !== -1) {
+      //
+      url = url.slice(0, hashmarkIndex);
+    }
+
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  } //
+
+
+  return url;
+}
+
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+var ResponseError = /*#__PURE__*/function (_Error) {
+  _inherits(ResponseError, _Error);
+
+  var _super = _createSuper(ResponseError);
+
+  function ResponseError(response, text, data, request) {
+    var _this;
+
+    _classCallCheck(this, ResponseError);
+
+    _this = _super.call(this, text || response.statusText);
+    _this.ok = false;
+    _this.name = 'ResponseError';
+    _this.data = data;
+    _this.response = response;
+    _this.request = request;
+    return _this;
+  }
+
+  return ResponseError;
+}( /*#__PURE__*/_wrapNativeSuper(Error));
 
 var queryString = {};
 
@@ -466,13 +739,14 @@ var filterObj = function (obj, predicate) {
 };
 
 (function (exports) {
-
   const strictUriEncode$1 = strictUriEncode;
   const decodeComponent = decodeUriComponent;
   const splitOnFirst$1 = splitOnFirst;
   const filterObject = filterObj;
 
   const isNullOrUndefined = value => value === null || value === undefined;
+
+  const encodeFragmentIdentifier = Symbol('encodeFragmentIdentifier');
 
   function encoderForArrayFormat(options) {
     switch (options.arrayFormat) {
@@ -506,17 +780,24 @@ var filterObj = function (obj, predicate) {
 
       case 'comma':
       case 'separator':
-        return key => (result, value) => {
-          if (value === null || value === undefined || value.length === 0) {
-            return result;
-          }
+      case 'bracket-separator':
+        {
+          const keyValueSep = options.arrayFormat === 'bracket-separator' ? '[]=' : '=';
+          return key => (result, value) => {
+            if (value === undefined || options.skipNull && value === null || options.skipEmptyString && value === '') {
+              return result;
+            } // Translate null to an empty string so that it doesn't serialize as 'null'
 
-          if (result.length === 0) {
-            return [[encode(key, options), '=', encode(value, options)].join('')];
-          }
 
-          return [[result, encode(value, options)].join(options.arrayFormatSeparator)];
-        };
+            value = value === null ? '' : value;
+
+            if (result.length === 0) {
+              return [[encode(key, options), keyValueSep, encode(value, options)].join('')];
+            }
+
+            return [[result, encode(value, options)].join(options.arrayFormatSeparator)];
+          };
+        }
 
       default:
         return key => (result, value) => {
@@ -580,6 +861,26 @@ var filterObj = function (obj, predicate) {
           value = isEncodedArray ? decode(value, options) : value;
           const newValue = isArray || isEncodedArray ? value.split(options.arrayFormatSeparator).map(item => decode(item, options)) : value === null ? value : decode(value, options);
           accumulator[key] = newValue;
+        };
+
+      case 'bracket-separator':
+        return (key, value, accumulator) => {
+          const isArray = /(\[\])$/.test(key);
+          key = key.replace(/\[\]$/, '');
+
+          if (!isArray) {
+            accumulator[key] = value ? decode(value, options) : value;
+            return;
+          }
+
+          const arrayValue = value === null ? [] : value.split(options.arrayFormatSeparator).map(item => decode(item, options));
+
+          if (accumulator[key] === undefined) {
+            accumulator[key] = arrayValue;
+            return;
+          }
+
+          accumulator[key] = [].concat(accumulator[key], arrayValue);
         };
 
       default:
@@ -702,7 +1003,7 @@ var filterObj = function (obj, predicate) {
       let [key, value] = splitOnFirst$1(options.decode ? param.replace(/\+/g, ' ') : param, '='); // Missing `=` should be `null`:
       // http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
 
-      value = value === undefined ? null : ['comma', 'separator'].includes(options.arrayFormat) ? value : decode(value, options);
+      value = value === undefined ? null : ['comma', 'separator', 'bracket-separator'].includes(options.arrayFormat) ? value : decode(value, options);
       formatter(decode(key, options), value, ret);
     }
 
@@ -781,6 +1082,10 @@ var filterObj = function (obj, predicate) {
       }
 
       if (Array.isArray(value)) {
+        if (value.length === 0 && options.arrayFormat === 'bracket-separator') {
+          return encode(key, options) + '[]';
+        }
+
         return value.reduce(formatter(key), []).join('&');
       }
 
@@ -804,7 +1109,8 @@ var filterObj = function (obj, predicate) {
   exports.stringifyUrl = (object, options) => {
     options = Object.assign({
       encode: true,
-      strict: true
+      strict: true,
+      [encodeFragmentIdentifier]: true
     }, options);
     const url = removeHash(object.url).split('?')[0] || '';
     const queryFromUrl = exports.extract(object.url);
@@ -821,7 +1127,7 @@ var filterObj = function (obj, predicate) {
     let hash = getHash(object.url);
 
     if (object.fragmentIdentifier) {
-      hash = `#${encode(object.fragmentIdentifier, options)}`;
+      hash = `#${options[encodeFragmentIdentifier] ? encode(object.fragmentIdentifier, options) : object.fragmentIdentifier}`;
     }
 
     return `${url}${queryString}${hash}`;
@@ -829,7 +1135,8 @@ var filterObj = function (obj, predicate) {
 
   exports.pick = (input, filter, options) => {
     options = Object.assign({
-      parseFragmentIdentifier: true
+      parseFragmentIdentifier: true,
+      [encodeFragmentIdentifier]: false
     }, options);
     const {
       url,
@@ -849,142 +1156,7 @@ var filterObj = function (obj, predicate) {
   };
 })(queryString);
 
-function buildURL(url, options) {
-  const {
-    params,
-    dataArrayFormat,
-    dataSerializer,
-    dataRequestEncode
-  } = options || {};
-
-  if (!params) {
-    return url;
-  } // URL RFC3986
-  // https://tools.ietf.org/html/rfc3986#section-2.2
-  // https://github.com/DavidTPate/rfc-3986#readme
-  // https://www.cnblogs.com/zhao1949/p/9871042.html
-  // 允许包含字符：(A-Za-z0-9-_.!~*'():/?#[]@$&'+,;=`)
-  // encodeURIComponent不会编码处理字符:A-Za-z0-9-_.!~*'()
-  // => :/?#[]@$&'+,;=`
-  // => ;/?:@&=+$,
-  // => #[]
-
-
-  function encode(val) {
-    //
-    if (!dataRequestEncode) {
-      //
-      return val;
-    } //
-
-
-    if (dataRequestEncode === 'encodeURIComponent') {
-      //
-      return encodeURIComponent(val);
-    }
-
-    if (typeof dataRequestEncode === 'function') {
-      //
-      return dataRequestEncode(val);
-    } //
-
-
-    if (utils.isArray(val)) {
-      //
-      return val;
-    } //
-
-
-    return encodeURIComponent(val) // .replace(/%40/gi, '@')
-    .replace(/%3A/gi, ':').replace(/%24/g, '$').replace(/%2C/gi, ',').replace(/%20/g, '+').replace(/%5B/gi, '[').replace(/%5D/gi, ']');
-  }
-
-  let serializedParams = null;
-
-  if (dataSerializer) {
-    //
-    serializedParams = dataSerializer(params);
-  } else {
-    //
-    const parts = []; //
-
-    utils.forEach(params, function serialize(val, key) {
-      if (val === null || typeof val === 'undefined') {
-        //
-        return;
-      }
-
-      if (utils.isArray(val)) {
-        if (dataArrayFormat === 2) {
-          key += '[]'; // key[]=1&key[]=2&key[]=3
-        } else {
-          key += ''; // key=1&key=2&key=3
-        }
-      } else {
-        val = [val];
-      }
-
-      const arr3 = [];
-      utils.forEach(val, function parseValue(v) {
-        //
-        if (utils.isDate(v)) {
-          //
-          v = v.toISOString();
-        } else if (utils.isObject(v)) {
-          //
-          v = JSON.stringify(v);
-        }
-
-        if (dataArrayFormat === 3) {
-          //
-          arr3.push(encode(v));
-        } else {
-          //
-          parts.push(`${encode(key)}=${encode(v)}`);
-        }
-      }); // key=1,2,3
-
-      if (dataArrayFormat === 3 && arr3.length > 0) {
-        //
-        parts.push(`${encode(key)}=${arr3.join(',')}`);
-      }
-    }); //
-
-    serializedParams = parts.join('&');
-  } //
-
-
-  if (serializedParams) {
-    //
-    const hashmarkIndex = url.indexOf('#'); //
-
-    if (hashmarkIndex !== -1) {
-      //
-      url = url.slice(0, hashmarkIndex);
-    }
-
-    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
-  } //
-
-
-  return url;
-}
-
-class ResponseError extends Error {
-  constructor(response, text, data, request) {
-    super(text || response.statusText);
-    this.ok = false;
-    this.name = 'ResponseError';
-    this.data = data;
-    this.response = response;
-    this.request = request;
-  }
-
-}
-
-const {
-  assign
-} = Object;
+var assign = Object.assign;
 
 function throwIfCancellationRequested(config) {
   //
@@ -995,8 +1167,10 @@ function throwIfCancellationRequested(config) {
 } //
 
 
-function combineURLs(baseURL = '', relativeURL = '') {
-  //
+function combineURLs() {
+  var baseURL = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var relativeURL = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ''; //
+
   baseURL = baseURL || '';
   relativeURL = relativeURL || ''; //
 
@@ -1021,18 +1195,18 @@ function placeholderURLs(url, data, deleted) {
 
   data = assign(data); //
 
-  const reg = /\{([\w-]+)}/g;
+  var reg = /\{([\w-]+)}/g;
 
-  const fn1 = function ($0, $1) {
-    const d = data[$1]; //
+  var fn1 = function fn1($0, $1) {
+    var d = data[$1]; //
     // delete data[$1]; // remove url parameter
     //
 
     return d !== undefined ? d : '';
   };
 
-  const fn2 = function ($0, $1) {
-    const d = data[$1]; //
+  var fn2 = function fn2($0, $1) {
+    var d = data[$1]; //
 
     delete data[$1]; // remove url parameter
     //
@@ -1041,7 +1215,7 @@ function placeholderURLs(url, data, deleted) {
   }; //
 
 
-  const fn = deleted ? fn2 : fn1; //
+  var fn = deleted ? fn2 : fn1; //
 
   url = url.replace(reg, fn).replace(/(\w)\/{2,}/g, '$1/') // more than two //
   .replace(/\/$/, ''); // replace end /
@@ -1051,30 +1225,37 @@ function placeholderURLs(url, data, deleted) {
 } //
 
 
-function dispatchRequest(config = {}) {
-  //
+function dispatchRequest() {
+  var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}; //
+
   throwIfCancellationRequested(config); //
 
-  const {
-    baseURL,
-    action,
-    data = {},
-    body = null,
-    requestType = 'json',
-    responseType = 'json',
-    dataSerialized,
-    dataSerializer,
-    dataArrayFormat = 1,
-    dataPlaceholderRemoved = true,
-    dataRequestEncode = 'rfc3986',
-    prefix = '',
-    timeout
-  } = config;
-  const adapter = config.adapter || defaults.adapter; // body
+  var baseURL = config.baseURL,
+      action = config.action,
+      _config$data = config.data,
+      data = _config$data === void 0 ? {} : _config$data,
+      _config$body = config.body,
+      body = _config$body === void 0 ? null : _config$body,
+      _config$requestType = config.requestType,
+      requestType = _config$requestType === void 0 ? 'json' : _config$requestType,
+      _config$responseType = config.responseType,
+      responseType = _config$responseType === void 0 ? 'json' : _config$responseType,
+      dataSerialized = config.dataSerialized,
+      dataSerializer = config.dataSerializer,
+      _config$dataArrayForm = config.dataArrayFormat,
+      dataArrayFormat = _config$dataArrayForm === void 0 ? 1 : _config$dataArrayForm,
+      _config$dataPlacehold = config.dataPlaceholderRemoved,
+      dataPlaceholderRemoved = _config$dataPlacehold === void 0 ? true : _config$dataPlacehold,
+      _config$dataRequestEn = config.dataRequestEncode,
+      dataRequestEncode = _config$dataRequestEn === void 0 ? 'rfc3986' : _config$dataRequestEn,
+      _config$prefix = config.prefix,
+      prefix = _config$prefix === void 0 ? '' : _config$prefix,
+      timeout = config.timeout;
+  var adapter = config.adapter || defaults.adapter; // body
 
   if (data && ['post', 'put', 'patch', 'delete'].includes(config.method)) {
     //
-    const dataType = Object.prototype.toString.call(data);
+    var dataType = Object.prototype.toString.call(data);
 
     if (!body && (dataType === '[object Object]' || dataType === '[object Array]')) {
       //
@@ -1101,8 +1282,8 @@ function dispatchRequest(config = {}) {
   } // url
 
 
-  const prefixUrl = combineURLs(baseURL, prefix);
-  const url = combineURLs(prefixUrl, action); //
+  var prefixUrl = combineURLs(baseURL, prefix);
+  var url = combineURLs(prefixUrl, action); //
 
   config.url = placeholderURLs(url, data, dataPlaceholderRemoved); //
 
@@ -1110,9 +1291,9 @@ function dispatchRequest(config = {}) {
     //
     config.url = buildURL(config.url, {
       params: data,
-      dataArrayFormat,
-      dataSerializer,
-      dataRequestEncode
+      dataArrayFormat: dataArrayFormat,
+      dataSerializer: dataSerializer,
+      dataRequestEncode: dataRequestEncode
     });
     config.body = null;
   } else if (dataSerialized || body) {
@@ -1120,23 +1301,23 @@ function dispatchRequest(config = {}) {
     //
     config.url = buildURL(config.url, {
       params: data,
-      dataArrayFormat,
-      dataSerializer,
-      dataRequestEncode
+      dataArrayFormat: dataArrayFormat,
+      dataSerializer: dataSerializer,
+      dataRequestEncode: dataRequestEncode
     });
   } // auth
 
 
   if (config.auth) {
     //
-    const username = config.auth.username || '';
-    const password = config.auth.password || ''; //
+    var username = config.auth.username || '';
+    var password = config.auth.password || ''; //
 
-    config.headers.Authorization = `Basic ${btoa(`${username}:${password}`)}`;
+    config.headers.Authorization = "Basic ".concat(btoa("".concat(username, ":").concat(password)));
   } //
 
 
-  const races = [cancel2Throw(config), adapter(config)]; //
+  var races = [cancel2Throw(config), adapter(config)]; //
 
   if (timeout > 0) {
     //
@@ -1144,12 +1325,12 @@ function dispatchRequest(config = {}) {
   } //
 
 
-  return Promise.race(races).then(res => {
+  return Promise.race(races).then(function (res) {
     // {ok,data}
     if (!res.ok) {
       //
       return {
-        res,
+        res: res,
         req: config
       };
     } // already deal response data
@@ -1164,7 +1345,7 @@ function dispatchRequest(config = {}) {
 
       return {
         data: res.data,
-        res,
+        res: res,
         req: config
       };
     } //
@@ -1174,32 +1355,32 @@ function dispatchRequest(config = {}) {
       //response no content
       if (res.statusText === 'No Content') {
         return {
-          res,
+          res: res,
           req: config
         };
       } //
 
 
-      return res[responseType]().then(result => {
+      return res[responseType]().then(function (result) {
         //
         return {
           data: result,
-          res,
+          res: res,
           req: config
         };
       });
     } catch (e) {
-      const response = {
-        res: new ResponseError(`response type ${responseType} not support, message ${e.message()}`),
+      var response = {
+        res: new ResponseError("response type ".concat(responseType, " not support, message ").concat(e.message())),
         req: config
       }; //
 
       return Promise.reject(response);
     }
-  }).catch(res => {
+  })["catch"](function (res) {
     //
-    const response = {
-      res,
+    var response = {
+      res: res,
       req: config
     }; //
 
@@ -1212,13 +1393,14 @@ function dispatchRequest(config = {}) {
   });
 }
 
-const {
-  isObject,
-  deepMerge
-} = utils;
-function mergeConfig(config1 = {}, config2 = {}) {
-  //
-  const config = {}; //
+var isObject = utils.isObject,
+    deepMerge = utils.deepMerge;
+
+function mergeConfig() {
+  var config1 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var config2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}; //
+
+  var config = {}; //
 
   function mergeDeepProperties(val, prop) {
     // data and body not to merge
@@ -1247,12 +1429,6 @@ function mergeConfig(config1 = {}, config2 = {}) {
   return config;
 }
 
-/**
- * Request Object
- * see https://github.com/axios/axios
- *
- */
-
 function Request(instanceConfig) {
   //
   this.defaults = instanceConfig || {}; //
@@ -1266,7 +1442,7 @@ function Request(instanceConfig) {
 
 Request.prototype.request = function (opts) {
   //
-  const chain = [dispatchRequest, undefined]; //
+  var chain = [dispatchRequest, undefined]; //
 
   opts = mergeConfig(this.defaults, opts || {}); // method
 
@@ -1275,14 +1451,14 @@ Request.prototype.request = function (opts) {
 
   opts.headers = opts.headers || {}; //
 
-  let promise = Promise.resolve(opts); //
+  var promise = Promise.resolve(opts); //
 
-  this.interceptors.request.forEach(interceptor => {
+  this.interceptors.request.forEach(function (interceptor) {
     //
     chain.unshift(interceptor.fulfilled, interceptor.rejected);
   }); //
 
-  this.interceptors.response.forEach(interceptor => {
+  this.interceptors.response.forEach(function (interceptor) {
     //
     chain.push(interceptor.fulfilled, interceptor.rejected);
   }); //
@@ -1301,10 +1477,10 @@ utils.forEach(['delete', 'get', 'head', 'options', 'post', 'put', 'patch'], func
   //
   Request.prototype[method] = function (action, data, options) {
     //
-    if (typeof action === 'object') {
+    if (_typeof$1(action) === 'object') {
       //
       options = utils.merge(action, {
-        method
+        method: method
       }); //
 
       return this.request(options);
@@ -1312,12 +1488,12 @@ utils.forEach(['delete', 'get', 'head', 'options', 'post', 'put', 'patch'], func
 
 
     options = utils.merge(options || {}, {
-      method
+      method: method
     }); //
 
     return this.request(Object.assign({
-      action,
-      data
+      action: action,
+      data: data
     }, options));
   };
 });
@@ -1343,11 +1519,11 @@ function CancelToken(executor) {
     throw new TypeError('executor must be a function');
   }
 
-  let resolver = null;
+  var resolver = null;
   this.promise = new Promise(function promiseExecutor(resolve) {
     resolver = resolve;
   });
-  const token = this;
+  var token = this;
   executor(function cancel(message) {
     if (token.reason) {
       return;
@@ -1371,21 +1547,21 @@ CancelToken.prototype.throwIfRequested = function throwIfRequested() {
 
 
 CancelToken.source = function source() {
-  let cancel; //
+  var cancel; //
 
-  const token = new CancelToken(function executor(c) {
+  var token = new CancelToken(function executor(c) {
     cancel = c;
   }); //
 
   return {
-    token,
-    cancel
+    token: token,
+    cancel: cancel
   };
 };
 
 function createInstance(defaultConfig) {
-  const context = new Request(defaultConfig);
-  const instance = Request.prototype.request.bind(context); //
+  var context = new Request(defaultConfig);
+  var instance = Request.prototype.request.bind(context); //
 
   utils.extend(instance, Request.prototype, context);
   utils.extend(instance, context); //
@@ -1394,32 +1570,33 @@ function createInstance(defaultConfig) {
     //
     if (typeof instanceConfig === 'function') {
       //
-      const request = createInstance(mergeConfig(instance.defaults, instanceConfig.defaults)); //
+      var _request = createInstance(mergeConfig(instance.defaults, instanceConfig.defaults)); //
 
-      request.interceptors.request.handlers = [].concat(instanceConfig.interceptors.request.handlers || []); //
 
-      request.interceptors.response.handlers = [].concat(instanceConfig.interceptors.response.handlers || []); //
+      _request.interceptors.request.handlers = [].concat(instanceConfig.interceptors.request.handlers || []); //
 
-      return request;
+      _request.interceptors.response.handlers = [].concat(instanceConfig.interceptors.response.handlers || []); //
+
+      return _request;
     }
 
     return createInstance(mergeConfig(instance.defaults, instanceConfig));
-  };
+  }; //
 
+
+  instance.Request = Request; // cancel
+
+  instance.Cancel = Cancel;
+  instance.CancelToken = CancelToken;
   return instance;
-}
-
-const request = createInstance(defaults);
-request.Request = Request;
-
-request.create = function createRequest(instanceConfig = {}) {
-  //
-  return createInstance(mergeConfig(request.defaults, instanceConfig));
-}; // cancel
+} //
 
 
-request.Cancel = Cancel;
-request.CancelToken = CancelToken;
+var request$1 = createInstance(defaults); //
+
+const request = request$1.create({
+  adapter: Adapter
+}); //
 
 export default request;
 export { Cancel, CancelToken, RequestError, ResponseError };

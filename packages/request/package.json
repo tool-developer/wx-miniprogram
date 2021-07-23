@@ -6,7 +6,11 @@
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
-    "build": "npm run clean & rollup -c"
+    "build": "npm run clean & rollup -c",
+    "i":"yarn",
+    "l":"yarn link",
+    "nl":"yarn unlink",
+    "pl":"yarn link @tool-developer/wo-base-request @tool-developer/wo-base-adapter"
   },
   "repository": {
     "type": "git",
@@ -29,7 +33,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@tool-developer/wx-utils": "^0.0.4-canary.0"
+    "@tool-developer/wo-base-request": "^0.0.0-canary.1",
+    "@tool-developer/wo-base-adapter": "^0.0.0-canary.1"
   },
   "devDependencies": {
     "@tool-developer/wx-unit": "^0.0.4-canary.0"

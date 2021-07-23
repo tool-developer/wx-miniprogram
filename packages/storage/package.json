@@ -6,7 +6,11 @@
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
-    "build": "npm run clean & rollup -c"
+    "build": "npm run clean & rollup -c",
+    "i":"yarn",
+    "l":"yarn link",
+    "nl":"yarn unlink",
+    "pl":"yarn link @tool-developer/wo-base-storage"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,9 @@
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@tool-developer/wo-base-storage": "^0.0.0-canary.1"
   },
   "devDependencies": {
     "@tool-developer/wx-unit": "^0.0.4-canary.0"

@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"-@^0.0.1":
-  version "0.0.1"
-  resolved "https://r.cnpmjs.org/-/download/--0.0.1.tgz#db6db7cd866142880dd03e5b8781d1b4fac0e5bd"
-  integrity sha1-2223zYZhQogN0D5bh4HRtPrA5b0=
-
 async-es@2.6.3:
   version "2.6.3"
   resolved "https://r.cnpmjs.org/async-es/download/async-es-2.6.3.tgz#a28f606fba1dfafa1483fba7f968c4f51ca68995"

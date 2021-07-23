@@ -1,4 +1,4 @@
-import Storage from './lib/index';
+import Storage from '@tool-developer/wo-base-storage/dist';
 //
 const w = global.wx || wx || {};
 //

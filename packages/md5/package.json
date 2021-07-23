@@ -6,7 +6,11 @@
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
-    "build": "npm run clean & rollup -c"
+    "build": "npm run clean & rollup -c",
+    "i":"yarn",
+    "l":"yarn link",
+    "nl":"yarn unlink",
+    "pl":"yarn link @tool-developer/wo-base-md5"
   },
   "repository": {
     "type": "git",
@@ -24,7 +28,7 @@
   },
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
   "devDependencies": {
-    "blueimp-md5": "^2.18.0"
+    "@tool-developer/wo-base-md5":"^0.0.0-canary.1"
   },
   "publishConfig": {
     "access": "public"

@@ -1,10 +1,26 @@
-const {
-  toString
-} = Object.prototype;
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+var toString = Object.prototype.toString;
+
 function isArray(val) {
   //
   return toString.call(val) === '[object Array]';
 } //
+
 
 function isEmpty(obj) {
   if (!obj) {
@@ -17,7 +33,7 @@ function isEmpty(obj) {
   } //
 
 
-  const keys = Object.keys(obj);
+  var keys = Object.keys(obj);
 
   if (keys.length) {
     return false;
@@ -25,13 +41,16 @@ function isEmpty(obj) {
 
   return true;
 }
+
 function isObject(val) {
-  return val !== null && typeof val === 'object';
+  return val !== null && _typeof(val) === 'object';
 }
+
 function isDate(val) {
   //
   return toString.call(val) === '[object Date]';
 }
+
 function forEach(obj, fn) {
   // Don't bother if no value provided
   if (obj === null || typeof obj === 'undefined') {
@@ -47,16 +66,16 @@ function forEach(obj, fn) {
 
   if (isArray(obj)) {
     // Iterate over array values
-    for (let i = 0, l = obj.length; i < l; i += 1) {
+    for (var i = 0, l = obj.length; i < l; i += 1) {
       //
       fn.call(null, obj[i], i, obj);
     }
   } else {
     // Iterate over object keys
-    const keys = Object.keys(obj);
+    var keys = Object.keys(obj);
 
-    for (let i = 0; i < keys.length; i += 1) {
-      const key = keys[i]; //
+    for (var _i = 0; _i < keys.length; _i += 1) {
+      var key = keys[_i]; //
 
       if (Object.prototype.hasOwnProperty.call(obj, key)) {
         //
@@ -65,9 +84,10 @@ function forEach(obj, fn) {
     }
   }
 }
-function merge(...args) {
+
+function merge() {
   //
-  const result = {}; //
+  var result = {}; //
 
   function assignValue(val, key) {
     if (isObject(result[key]) && isObject(val)) {
@@ -79,17 +99,18 @@ function merge(...args) {
     }
   }
 
-  for (let i = 0, l = args.length; i < l; i += 1) {
+  for (var i = 0, l = arguments.length; i < l; i += 1) {
     //
-    forEach(args[i], assignValue);
+    forEach(i < 0 || arguments.length <= i ? undefined : arguments[i], assignValue);
   } //
 
 
   return result;
 }
-function deepMerge(...args) {
+
+function deepMerge() {
   //
-  const result = isArray(args[0]) ? [] : {}; //
+  var result = isArray(arguments.length <= 0 ? undefined : arguments[0]) ? [] : {}; //
 
   function assignValue(val, key) {
     //
@@ -112,22 +133,23 @@ function deepMerge(...args) {
   } //
 
 
-  for (let i = 0, l = args.length; i < l; i += 1) {
+  for (var i = 0, l = arguments.length; i < l; i += 1) {
     //
-    forEach(args[i], assignValue);
+    forEach(i < 0 || arguments.length <= i ? undefined : arguments[i], assignValue);
   } //
 
 
   return result;
 }
+
 var index = {
-  forEach,
-  merge,
-  deepMerge,
-  isArray,
-  isObject,
-  isDate,
-  isEmpty
+  forEach: forEach,
+  merge: merge,
+  deepMerge: deepMerge,
+  isArray: isArray,
+  isObject: isObject,
+  isDate: isDate,
+  isEmpty: isEmpty
 };
 
 export default index;

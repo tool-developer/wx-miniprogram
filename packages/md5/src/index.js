@@ -1,3 +1,2 @@
-import md5 from 'blueimp-md5';
-
-export default md5;
+export * from '@tool-developer/wo-base-md5';
+export {default} from '@tool-developer/wo-base-md5';
