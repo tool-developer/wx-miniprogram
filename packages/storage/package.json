@@ -1,16 +1,16 @@
 {
   "name": "@tool-developer/wx-storage",
-  "version": "0.0.4-canary.0",
+  "version": "0.0.4-canary.1",
   "description": "wx miniprogram storage",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
     "build": "npm run clean & rollup -c",
-    "i":"yarn",
-    "l":"yarn link",
-    "nl":"yarn unlink",
-    "pl":"yarn link @tool-developer/wo-base-storage"
+    "i": "yarn",
+    "l": "yarn link",
+    "nl": "yarn unlink",
+    "pl": "yarn link @tool-developer/wo-base-storage"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
     "@tool-developer/wo-base-storage": "^0.0.0-canary.1"
   },
   "devDependencies": {
-    "@tool-developer/wx-unit": "^0.0.4-canary.0"
+    "@tool-developer/wx-unit": "^0.0.4-canary.1"
   },
   "gitHead": "649cfd253205dc8bdd703c27900fd7699f4685f1"
 }

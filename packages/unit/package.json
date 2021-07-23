@@ -1,15 +1,15 @@
 {
   "name": "@tool-developer/wx-unit",
-  "version": "0.0.4-canary.0",
+  "version": "0.0.4-canary.1",
   "description": "wx miniprogram unit test",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
     "build": "npm run clean & rollup -c",
-    "i":"yarn",
-    "l":"yarn link",
-    "nl":"yarn unlink"
+    "i": "yarn",
+    "l": "yarn link",
+    "nl": "yarn unlink"
   },
   "repository": {
     "type": "git",

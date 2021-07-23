@@ -1,16 +1,16 @@
 {
   "name": "@tool-developer/wx-request",
-  "version": "0.0.4-canary.0",
+  "version": "0.0.4-canary.1",
   "description": "wx miniprogram request",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "clean": "../../scripts/clean_package.sh",
     "build": "npm run clean & rollup -c",
-    "i":"yarn",
-    "l":"yarn link",
-    "nl":"yarn unlink",
-    "pl":"yarn link @tool-developer/wo-base-request @tool-developer/wo-base-adapter"
+    "i": "yarn",
+    "l": "yarn link",
+    "nl": "yarn unlink",
+    "pl": "yarn link @tool-developer/wo-base-request @tool-developer/wo-base-adapter"
   },
   "repository": {
     "type": "git",
@@ -33,11 +33,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@tool-developer/wo-base-request": "^0.0.0-canary.1",
-    "@tool-developer/wo-base-adapter": "^0.0.0-canary.1"
+    "@tool-developer/wo-base-adapter": "^0.0.0-canary.1",
+    "@tool-developer/wo-base-request": "^0.0.0-canary.1"
   },
   "devDependencies": {
-    "@tool-developer/wx-unit": "^0.0.4-canary.0"
+    "@tool-developer/wx-unit": "^0.0.4-canary.1"
   },
   "gitHead": "649cfd253205dc8bdd703c27900fd7699f4685f1"
 }
