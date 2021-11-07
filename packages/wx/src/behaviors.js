@@ -6,5 +6,9 @@ export default Behavior({
   data:{},
   methods:{
     ...wxapp
+  },
+  created(){
+    //
+    Object.assign(this,wxapp)
   }
 })

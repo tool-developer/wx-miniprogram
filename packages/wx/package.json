@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "wx miniprogram app",
   "main": "index.js",
   "scripts": {
