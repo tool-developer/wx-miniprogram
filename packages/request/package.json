@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-request",
-  "version": "0.0.4",
+  "version": "0.0.5-canary.0",
   "description": "wx miniprogram request",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "@tool-developer/wo-base-request": "^0.0.0-canary.1"
   },
   "devDependencies": {
-    "@tool-developer/wx-unit": "^0.0.4"
+    "@tool-developer/wx-unit": "^0.0.5-canary.0"
   },
   "gitHead": "649cfd253205dc8bdd703c27900fd7699f4685f1"
 }
