@@ -38,5 +38,5 @@
   "devDependencies": {
     "@tool-developer/wx-unit": "^0.0.5-canary.0"
   },
-  "gitHead": "649cfd253205dc8bdd703c27900fd7699f4685f1"
+  "gitHead": "c6c0de97c2a323c46afaaf13356282878c4f2e23"
 }
