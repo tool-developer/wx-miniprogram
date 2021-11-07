@@ -5,7 +5,13 @@ var behaviors = Behavior({
   properties: {},
   data: {},
   methods: { ...wxapp
+  },
+
+  created() {
+    //
+    Object.assign(this, wxapp);
   }
+
 });
 
 export default behaviors;
