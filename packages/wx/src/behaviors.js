@@ -7,8 +7,14 @@ export default Behavior({
   methods:{
     ...wxapp
   },
+  definitionFilter(defFields){
+    //
+    defFields.methods.__getEvents = () => defFields.events
+  },
   created(){
     //
-    Object.assign(this,wxapp)
+    Object.assign(this,wxapp);
+    // 扩展events
+    this.events = wxapp.extend(this.__getEvents(),this.events);
   }
 })
