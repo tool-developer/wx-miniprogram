@@ -9,7 +9,7 @@ var behaviors = Behavior({
 
   definitionFilter(defFields) {
     //
-    defFields.methods.__getEvents = () => defFields.events;
+    defFields.methods.__getEvents = () => defFields.events || {};
   },
 
   created() {
