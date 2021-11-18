@@ -1,6 +1,6 @@
 {
   "name": "@tool-developer/wx-utils",
-  "version": "0.0.5-canary.0",
+  "version": "0.0.5-canary.1",
   "description": "wx miniprogram utils library",
   "main": "index.js",
   "scripts": {
