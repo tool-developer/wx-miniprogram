@@ -2,29 +2,24 @@
 # yarn lockfile v1
 
 
-"@tool-developer/wo-request@^0.0.0-canary.1":
-  version "0.0.0-canary.1"
-  resolved "https://registry.npmjs.org/@tool-developer/wo-request/-/wo-request-0.0.0-canary.1.tgz#76b9544f28bc819bafa8d0f61584c2cceeca607e"
-  integrity sha512-rfEYmjSlACUSXjzeI3MhhzxsGaquv3oAXE5dN4CQjCJQbRe0buaDPDnZYASUmGBJBXh2rvdOKfFwgvCqFPkU6g==
+"@tool-developer/wo-base-request@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@tool-developer/wo-base-request/-/wo-base-request-0.0.2.tgz#309a5ce363eccef4401c271245b92378082b9017"
+  integrity sha512-FcVPlhvTDoS3QZZYVzBSaBxGL7Rb45AnbQUTlX9QDSGBELIfh4BCuCd+PR+8rn3X1rcsrtR5MiiQDmGgqXx3vQ==
   dependencies:
-    "@tool-developer/wo-utils" "^0.0.0-canary.1"
+    "@tool-developer/wo-base-utils" "^0.0.2"
     isomorphic-fetch "^3.0.0"
     query-string "^7.0.1"
 
-"@tool-developer/wo-utils@^0.0.0-canary.1":
-  version "0.0.0-canary.1"
-  resolved "https://registry.npmjs.org/@tool-developer/wo-utils/-/wo-utils-0.0.0-canary.1.tgz#2ba95d0c9df6cd1d511ab5179f51bd2205c9c3eb"
-  integrity sha512-xeyJK+XoqIdjJvKCYwBzBLZIRM1cdF5Kj3FPeXSNjV0PGAGnk/ERmWF6DwJGpGh4hBvxvF3us2ze9/Z9cHlB1g==
+"@tool-developer/wo-base-utils@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@tool-developer/wo-base-utils/-/wo-base-utils-0.0.2.tgz#7ea76cec2d3fa5d70818aca22fa0abe3c986b64c"
+  integrity sha512-Bgec5Cg+gyXQKFgb2fvnJi0nJIsueNvzjtA37FXq164wczJZaONn0pp/HD7zjyNX60YOfBBO1JwbcHEqMyTRcw==
 
-"@tool-developer/wx-unit@^0.0.4-canary.0":
-  version "0.0.4-canary.0"
-  resolved "https://registry.npmjs.org/@tool-developer/wx-unit/-/wx-unit-0.0.4-canary.0.tgz#6a389c3640a0da9e470aea3f165532ed9d336f16"
-  integrity sha512-UW/jtu3nqSmIsrJJH9NlLVASB9aZrHVtpZ7dwVp1I76IOY87p/LEG+whPn4oqJNZiTMkty5UeZSnqkulWfpiwQ==
-
-"@tool-developer/wx-utils@^0.0.4-canary.0":
-  version "0.0.4-canary.0"
-  resolved "https://registry.npmjs.org/@tool-developer/wx-utils/-/wx-utils-0.0.4-canary.0.tgz#affcd34007302a968260c7b3e1199e4412b5fda9"
-  integrity sha512-IbYdL/a1Pj53Ebps7B0FtT4xT5T3XgqIRxjgjeSiR7Rqn7DVXBsZMhzs22NYBj3PUgoD4TSifsujxg5xoOsxsw==
+"@tool-developer/wx-unit@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/@tool-developer/wx-unit/-/wx-unit-0.0.5.tgz#c72225a3d15e47e91d2055cf12a59e3862bc7052"
+  integrity sha512-HI3RYcuveufrkyoampNGcHVBu/+3gI16V8sAB0EyXOWOG5/ihg2r+StwEUKuH8spyqnIeIjLFonAS5gAZZ9Uvg==
 
 decode-uri-component@^0.2.0:
   version "0.2.0"

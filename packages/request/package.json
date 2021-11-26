@@ -33,8 +33,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tool-developer/wo-base-adapter": "^0.0.0-canary.1",
-    "@tool-developer/wo-base-request": "^0.0.0-canary.1"
+    "@tool-developer/wo-base-request": "^0.0.2"
   },
   "devDependencies": {
     "@tool-developer/wx-unit": "^0.0.5"

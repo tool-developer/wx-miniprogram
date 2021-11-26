@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-blueimp-md5@^2.18.0:
-  version "2.18.0"
-  resolved "https://r.cnpmjs.org/blueimp-md5/download/blueimp-md5-2.18.0.tgz#1152be1335f0c6b3911ed9e36db54f3e6ac52935"
-  integrity sha1-EVK+EzXwxrORHtnjbbVPPmrFKTU=
+"@tool-developer/wo-base-md5@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@tool-developer/wo-base-md5/-/wo-base-md5-0.0.2.tgz#edae4d855adb48b5297a0fa0832ebc6ee44c9253"
+  integrity sha512-pVUZKLwa9bSUaq08DQz50FknSintYvhMnpu/pJkURWMGSpcxdIpXQUvkScOgaawqfVmy9m+9t4itaZTCP7B9zQ==

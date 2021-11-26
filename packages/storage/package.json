@@ -33,7 +33,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tool-developer/wo-base-storage": "^0.0.0-canary.1"
+    "@tool-developer/wo-base-storage": "^0.0.2"
   },
   "devDependencies": {
     "@tool-developer/wx-unit": "^0.0.5"

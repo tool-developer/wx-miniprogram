@@ -2,12 +2,12 @@
 function uploadAdapter(config) {
   //
   return new Promise(function (resolve, reject) {
-    var data = config.data;
-    var headers = config.headers || {};
-    var url = config.url; //console.log('--wx adapter config--',config);
+    let data = config.data;
+    let headers = config.headers || {};
+    let url = config.url; //console.log('--wx adapter config--',config);
 
-    var success = function success(res) {
-      var data = res.data; //
+    let success = function (res) {
+      let data = res.data; //
 
       if (typeof data === 'string') {
         try {
@@ -20,14 +20,14 @@ function uploadAdapter(config) {
       resolve(data);
     };
 
-    var fail = function fail(err) {
+    let fail = function (err) {
       reject(err);
     }; //
 
 
-    var formData = data.formData || '';
-    var name = data.name || '';
-    var filePath = data.filePath || ''; //
+    let formData = data.formData || '';
+    let name = data.name || '';
+    let filePath = data.filePath || ''; //
 
     if (!name) {
       //
@@ -41,7 +41,7 @@ function uploadAdapter(config) {
     } //
 
 
-    var task = wx.uploadFile({
+    let task = wx.uploadFile({
       // ...config,
       url: url,
       filePath: filePath,

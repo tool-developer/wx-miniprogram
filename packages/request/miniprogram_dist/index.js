@@ -1,4 +1,4 @@
-import { A as Adapter } from './defaultAdapter-b96d75c4.js';
+import Adapter from './adapter/defaultAdapter.js';
 
 var defaults = {
   timeout: 3000,

@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/tool-developer/wx-miniprogram#readme",
   "devDependencies": {
-    "@tool-developer/wo-base-md5": "^0.0.0-canary.1"
+    "@tool-developer/wo-base-md5": "^0.0.2"
   },
   "publishConfig": {
     "access": "public"
