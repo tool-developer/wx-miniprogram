@@ -3,7 +3,9 @@
 exports[`wx app behaviors test 1`] = `
 Object {
   "behaviors": Array [],
+  "created": [Function],
   "data": Object {},
+  "definitionFilter": [Function],
   "methods": Object {
     "$set": [Function],
     "PageNamePathKV": Object {
@@ -41,6 +43,7 @@ Object {
     "reLaunch": [Function],
     "reLaunchTo": [Function],
     "redirectTo": [Function],
+    "scrollToEl": [Function],
     "showLoading": [Function],
     "showModal": [Function],
     "showToast": [Function],
