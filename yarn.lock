@@ -2010,11 +2010,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@tool-developer/wx-app@^0.0.5-canary.0":
-  version "0.0.5-canary.0"
-  resolved "https://registry.npmjs.org/@tool-developer/wx-app/-/wx-app-0.0.5-canary.0.tgz#fc201e4fdcef4eb257a388a8d70961e4d7b4185b"
-  integrity sha512-hnK75m97rUTD+VoiYrkMTgxNGPxjqfynReu5Zw322vQvFd1ZlCKf7tbdQNUoWT7NL9/+pEEpa4WGUo49gZj3Qg==
-
 "@tool-developer/wx-unit@^0.0.1-canary.1":
   version "0.0.1"
   resolved "https://r.cnpmjs.org/@tool-developer/wx-unit/download/@tool-developer/wx-unit-0.0.1.tgz#09ae4cb19d0d6ff1704f05729750533bdf5d3e23"

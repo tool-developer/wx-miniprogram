@@ -2,24 +2,23 @@
 # yarn lockfile v1
 
 
-"@tool-developer/wo-base-request@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@tool-developer/wo-base-request/-/wo-base-request-0.0.2.tgz#309a5ce363eccef4401c271245b92378082b9017"
-  integrity sha512-FcVPlhvTDoS3QZZYVzBSaBxGL7Rb45AnbQUTlX9QDSGBELIfh4BCuCd+PR+8rn3X1rcsrtR5MiiQDmGgqXx3vQ==
+"@tool-developer/wo-base-request@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/@tool-developer/wo-base-request/-/wo-base-request-0.0.3.tgz#f77369b245f255fc3a8a747ec853da54d233908b"
+  integrity sha512-4xAeJ9lYo+N83aWax3UwZ74szHggriQTEml3dceiwhcvkwXkWQ7M2LdAisEhEbh15FEitJhKGuAY2EMVzzAjBw==
   dependencies:
-    "@tool-developer/wo-base-utils" "^0.0.2"
-    isomorphic-fetch "^3.0.0"
+    "@tool-developer/wo-base-utils" "^0.0.3"
     query-string "^7.0.1"
 
-"@tool-developer/wo-base-utils@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@tool-developer/wo-base-utils/-/wo-base-utils-0.0.2.tgz#7ea76cec2d3fa5d70818aca22fa0abe3c986b64c"
-  integrity sha512-Bgec5Cg+gyXQKFgb2fvnJi0nJIsueNvzjtA37FXq164wczJZaONn0pp/HD7zjyNX60YOfBBO1JwbcHEqMyTRcw==
+"@tool-developer/wo-base-utils@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/@tool-developer/wo-base-utils/-/wo-base-utils-0.0.3.tgz#3f7fe323b770be075a69ab5a5760c304c52730da"
+  integrity sha512-tNs5vlkPPL2b3iAGXHxE1IqiF8RD/NuyrLUVOSz73Am3R7MYvwVwwomQkJa4z69SPIYx6gFRgsoY1ngrGcwjFA==
 
-"@tool-developer/wx-unit@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/@tool-developer/wx-unit/-/wx-unit-0.0.5.tgz#c72225a3d15e47e91d2055cf12a59e3862bc7052"
-  integrity sha512-HI3RYcuveufrkyoampNGcHVBu/+3gI16V8sAB0EyXOWOG5/ihg2r+StwEUKuH8spyqnIeIjLFonAS5gAZZ9Uvg==
+"@tool-developer/wx-unit@^0.0.6-canary.0":
+  version "0.0.6-canary.0"
+  resolved "https://registry.npmjs.org/@tool-developer/wx-unit/-/wx-unit-0.0.6-canary.0.tgz#d1a4cc07ca5ff4c5e92f6ba4aa03e02637ae53df"
+  integrity sha512-aCsghSaUxTY/ZpsUSwZXF/hGkw8qfdugCzg31jaqT2UJxZUEIqK6sic7k2sLm4U00EqRBcoRw0S5rUIKbXBwJg==
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -30,19 +29,6 @@ filter-obj@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/filter-obj/-/filter-obj-1.1.0.tgz#9b311112bc6c6127a16e016c6c5d7f19e0805c5b"
   integrity sha1-mzERErxsYSehbgFsbF1/GeCAXFs=
-
-isomorphic-fetch@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/isomorphic-fetch/-/isomorphic-fetch-3.0.0.tgz#0267b005049046d2421207215d45d6a262b8b8b4"
-  integrity sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==
-  dependencies:
-    node-fetch "^2.6.1"
-    whatwg-fetch "^3.4.1"
-
-node-fetch@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
-  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 query-string@^7.0.1:
   version "7.0.1"
@@ -63,8 +49,3 @@ strict-uri-encode@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
   integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
-
-whatwg-fetch@^3.4.1:
-  version "3.6.2"
-  resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
-  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
