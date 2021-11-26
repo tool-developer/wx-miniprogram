@@ -14,7 +14,7 @@ const assign = function () {
     const arg = args[i] || {};
     const d = arg.data || {};
     const e = arg.events || {};
-    const f = arg.i18n || {}; //
+    const f = arg.i18n || {}; // 单独处理data、events、i18n
 
     data = objectAssign(data, d);
     events = objectAssign(events, e);
@@ -91,14 +91,17 @@ function handlePageTo() {
 
       const opts = {
         url: options,
-        success: function (e) {
+
+        success(e) {
           //console.log('success',e);
           cb && cb(null, e);
         },
-        fail: function (e) {
+
+        fail(e) {
           //console.log('fail',e);
           cb && cb(e);
         }
+
       }; //
 
       return wx[type](opts);
@@ -204,6 +207,7 @@ assign(wxapp, handlePageTo(), {
 
   // 返回
   back(delta = -1) {
+    //
     wx.navigateBack({
       delta
     });
@@ -424,19 +428,21 @@ assign(wxapp, {
   * @param callback
   * @returns {*}
   */
-  getWxSetting: function (callback) {
+  getWxSetting(callback) {
     //
     return wx.getSetting({
-      success: function (res) {
+      success(res) {
         const authSetting = res.authSetting || {}; //console.log('wx auth setting:',authSetting);
         //
 
         return callback(null, authSetting);
       },
-      fail: function () {
+
+      fail() {
         //
         return callback(null, {});
       }
+
     });
   },
 
@@ -446,7 +452,7 @@ assign(wxapp, {
   * @param {*} callback
   * 
   */
-  authorize: function (options, callback) {
+  authorize(options, callback) {
     //
     wxapp.getWxSetting((err, settings) => {
       //
@@ -500,7 +506,7 @@ assign(wxapp, {
   * 微信是否授权
   * @param {*} callback
   */
-  getWxUserInfoAuthorize: function (callback) {
+  getWxUserInfoAuthorize(callback) {
     //
     return wxapp.getWxSetting(function (err, settings) {
       //已授权用户登录
@@ -513,6 +519,7 @@ assign(wxapp, {
       return callback(null, false);
     });
   }
+
 }); //全局modal，控制同时只显示一个modal
 
 let modalObj = null;
@@ -522,7 +529,7 @@ assign(wxapp, {
   /**
   * 隐藏loading
   */
-  hideLoading: function () {
+  hideLoading() {
     //
     if (isShowLoading) {
       //
@@ -537,7 +544,7 @@ assign(wxapp, {
   * @param {*} options
   * @param {*} mask
   */
-  showLoading: function (options, mask) {
+  showLoading(options, mask) {
     options = options || {}; //
 
     if (typeof options === 'string') {
@@ -561,7 +568,7 @@ assign(wxapp, {
   * @param {*} icon
   * @param {*} duration
   */
-  showToast: function (options, icon, duration) {
+  showToast(options, icon, duration) {
     options = options || {};
     icon = icon || '';
     let image = ''; //
@@ -606,8 +613,9 @@ assign(wxapp, {
 
     return wx.showToast(options);
   },
+
   //隐藏toast
-  hideToast: function () {
+  hideToast() {
     //
     wx.hideToast();
   },
@@ -619,7 +627,7 @@ assign(wxapp, {
   * @param {*} options
   * @param {*} title
   */
-  showModal: function (options, title) {
+  showModal(options, title) {
     options = options || {}; //
 
     if (typeof options === 'string') {
@@ -665,11 +673,12 @@ assign(wxapp, {
 
     wx.showModal(options);
   }
+
 }); //其他
 
 assign(wxapp, {
   //获取当前页面options
-  getWxCurrentOptions: function () {
+  getWxCurrentOptions() {
     const pages = getCurrentPages();
 
     if (pages.length) {
@@ -682,8 +691,9 @@ assign(wxapp, {
 
     return {};
   },
+
   //获取当前页面路由地址
-  getWxCurrentPage: function () {
+  getWxCurrentPage() {
     const pages = getCurrentPages();
 
     if (pages.length) {
@@ -695,7 +705,33 @@ assign(wxapp, {
 
 
     return '';
+  },
+
+  // 滚动到元素位置
+  scrollToEl(el, duration = 300) {
+    //
+    if (!el) {
+      //
+      return console.log('scroll to el err: no el element');
+    } //
+
+
+    const query = wx.createSelectorQuery();
+    query.select(el).boundingClientRect();
+    query.selectViewport().scrollOffset();
+    query.exec(function (res) {
+      //
+      if (res && res.length > 1) {
+        const top = res[1].scrollTop + res[0].top - 10; //
+
+        wx.pageScrollTo({
+          scrollTop: top,
+          duration
+        });
+      }
+    });
   }
+
 });
 
 export default wxapp;
