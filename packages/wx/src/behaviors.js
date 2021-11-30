@@ -9,6 +9,7 @@ export default Behavior({
   },
   definitionFilter(defFields){
     //
+    defFields.methods = defFields.methods || {};
     defFields.methods.__getEvents = () => defFields.events || {}
   },
   created(){
