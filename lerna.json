@@ -2,7 +2,7 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.0.6-canary.2",
+  "version": "0.0.6-canary.3",
   "command": {
     "publish": {
       "ignoreChanges": [
