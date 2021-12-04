@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wx app touchevent test 1`] = `
+Object {
+  "data": Object {
+    "TOUCH_POSITION_OFFSET": 5,
+    "TOUCH_TIMESTAMP_OFFSET": 100,
+  },
+  "methods": Object {
+    "TE": [Function],
+    "TM": [Function],
+    "TS": [Function],
+  },
+}
+`;

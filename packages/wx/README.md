@@ -279,4 +279,6 @@ this.showModal({
 #### getWxCurrentPage()
 获取当前页面路由地址
 
+#### scrollToEl(el,duration)
+滚动到元素位置
 
