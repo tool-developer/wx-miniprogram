@@ -98,6 +98,11 @@ this.go('webview')
 
 
 ### 页面跳转
+#### qs(path,query,encode)
+#### qs(query,encode)
+路径path,参数query处理，小程序query要求是字符串，而非对象
+
+
 #### pageTo(url,type,cb)
 针对'navigateTo', 'switchTab', 'redirectTo', 'reLaunch'方法，提供一致的处理。
 

@@ -150,7 +150,7 @@ function handleQuery(query, encode = true) {
 } //
 
 
-function handlePath(path, query) {
+function handlePath(path, query, encode) {
   //
   if (!path) {
     return '';
@@ -159,10 +159,10 @@ function handlePath(path, query) {
 
   if (path.indexOf("?") > -1) {
     //
-    query = query ? "&" + handleQuery(query) : "";
+    query = query ? "&" + handleQuery(query, encode) : "";
   } else {
     //
-    query = query ? "?" + handleQuery(query) : "";
+    query = query ? "?" + handleQuery(query, encode) : "";
   } //
 
 
@@ -203,12 +203,12 @@ function pageTo(path, query, type, cb) {
 
 assign(wxapp, handlePageTo(), {
   // path,query to string
-  qs(path, query) {
+  qs(path, query, encode) {
     // query encode
     //
     if (typeof path === 'string') {
       //
-      return handlePath(path, query);
+      return handlePath(path, query, encode);
     } //
 
 
