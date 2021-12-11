@@ -158,25 +158,27 @@ function pageTo(path, query, type, cb) {
   path = path.replace(/^\//, "");
   //
   path = handlePath(path,query);
-  [path,query=""] = path.split('?') || [];
+  const pageName = path.split('?')[0] || '';// 无/前缀
+  // 添加斜杠前缀
+  path = ['/',path].join('');
   //
   if (type === "reLaunch" || type === true) {
     //
-    return wxapp.reLaunchTo(["/", path, query].join(""), cb);
+    return wxapp.reLaunchTo(path, cb);
   }
   //如果是tab，进入指定页
-  if (wxapp.TabBarList.indexOf(path) > -1) {
+  if (wxapp.TabBarList.indexOf(pageName) > -1) {
     //tab需要使用switchTab，且不能传递参数
-    return wxapp.switchTab(["/", path].join(""));
+    return wxapp.switchTab(['/',pageName].join(''));
   }
-  //
+  // 无/前缀
   const currentPage = wxapp.getWxCurrentPage();
-  if (currentPage === path) {
+  if (currentPage === pageName) {
     //
     return console.log("current page is path", currentPage);
   }
   //
-  return wxapp.pageTo(["/", path, query].join(""), type, cb);
+  return wxapp.pageTo(path, type, cb);
 }
 //
 assign(wxapp, handlePageTo(),{
