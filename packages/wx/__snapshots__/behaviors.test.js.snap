@@ -40,6 +40,7 @@ Object {
     "i18nHandle": [Function],
     "navigateTo": [Function],
     "pageTo": [Function],
+    "qs": [Function],
     "reLaunch": [Function],
     "reLaunchTo": [Function],
     "redirectTo": [Function],

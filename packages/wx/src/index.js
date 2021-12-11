@@ -116,19 +116,40 @@ function handlePageTo() {
 }
 
 //
-function obj2url(obj) {
-  if (!obj) return "";
+function handleQuery(query,encode = true) {
+  //
+  if (!query) return "";
   const res = [];
   //
-  for (let i in obj) {
+  encode = encode ? encodeURIComponent : v => v;
+  //
+  for (let i in query) {
     //
-    if (obj[i] !== undefined && obj[i] !== null) {
+    if (query[i] !== undefined && query[i] !== null) {
       //
-      res.push(i + "=" + encodeURIComponent(obj[i]));
+      res.push(i + "=" + encode(query[i]));
     }
   }
   //
   return res.join("&");
+}
+//
+function handlePath(path,query){
+  //
+  if(!path){
+
+    return '';
+  }
+  //
+  if (path.indexOf("?") > -1) {
+    //
+    query = query ? "&" + handleQuery(query) : "";
+  } else {
+    //
+    query = query ? "?" + handleQuery(query) : "";
+  }
+  //
+  return [path,query].join('');
 }
 
 //
@@ -136,13 +157,8 @@ function pageTo(path, query, type, cb) {
   //
   path = path.replace(/^\//, "");
   //
-  if (path.indexOf("?") > -1) {
-    //
-    query = query ? "&" + obj2url(query) : "";
-  } else {
-    //
-    query = query ? "?" + obj2url(query) : "";
-  }
+  path = handlePath(path,query);
+  [path,query=""] = path.split('?') || [];
   //
   if (type === "reLaunch" || type === true) {
     //
@@ -164,6 +180,16 @@ function pageTo(path, query, type, cb) {
 }
 //
 assign(wxapp, handlePageTo(),{
+  // path,query to string
+  qs(path,query){// query encode
+    //
+    if(typeof path === 'string'){
+      //
+      return handlePath(path,query);
+    }
+    //
+    return handleQuery(path,query);
+  },
   //
   go(page,query,type,cb){
     if(!page){
