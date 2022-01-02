@@ -99,12 +99,20 @@ const methods = {
 
 }; // 提供给子组件调用
 
-var touchevent = Behavior({
+const TouchBehavior = Behavior({
   data: {
     TOUCH_POSITION_OFFSET,
     TOUCH_TIMESTAMP_OFFSET
   },
   methods
-});
+}); //
+
+var touchevent = {
+  //提供给外部可更改
+  TOUCH_POSITION_OFFSET,
+  TOUCH_TIMESTAMP_OFFSET,
+  ...methods
+};
 
 export default touchevent;
+export { TouchBehavior };

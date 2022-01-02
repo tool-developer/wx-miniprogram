@@ -101,10 +101,17 @@ const methods = {
 };
 
 // 提供给子组件调用
-export default Behavior({
+export const TouchBehavior = Behavior({
   data: {
     TOUCH_POSITION_OFFSET,
     TOUCH_TIMESTAMP_OFFSET,
   },
   methods,
 });
+//
+export default {
+  //提供给外部可更改
+  TOUCH_POSITION_OFFSET,
+  TOUCH_TIMESTAMP_OFFSET,
+  ...methods,
+};
